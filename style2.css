@@ -1,0 +1,24 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(82, 166, 245);
+}
+
+h1 {
+  font-size: 75px;
+}
+
+button{
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: grey;
+    color: white;
+    display: block;
+    text-transform: uppercase;
+    border-radius: 165px;
+    width: 175px;
+    align-item: center;
+}
