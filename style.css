@@ -12,11 +12,7 @@ body {
   background-color: rgb(190, 119, 38);
 }
 
-h1 {
-  font-size: 75px;
-}
-
-.menu {
+#menu {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -40,7 +36,7 @@ a {
   text-decoration: none;
 }
 
-#mega:hover {
+#surprise:hover {
    text-decoration: underline;
    color: green;
 }
