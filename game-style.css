@@ -4,8 +4,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
-  display: block; 
+  display: flex; 
   background-color: rgb(190, 119, 38);
+  flex-direction: column;
 }
 
 a {
