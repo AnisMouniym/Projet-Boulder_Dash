@@ -9,8 +9,26 @@ body {
   flex-direction: column;
 }
 
+button {
+  font-family: 'Press Start 2P', cursive;
+  padding: 15px;
+  box-sizing: border-box;
+  background-color: grey;
+  color: white;
+  display: block;
+  text-transform: uppercase;
+  border-radius: 165px;
+  width: 200px;
+  margin-bottom: 30px;
+}
+
 a {
   text-decoration: none;
+}
+
+#menu {
+  display: block;
+  margin-right: auto;
 }
 
 #logo {
