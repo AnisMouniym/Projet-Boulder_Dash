@@ -7,3 +7,7 @@ body {
     background: url(img/backgrnd.gif) no-repeat center;
     background-size: cover;
 }
+
+a {
+    text-decoration: none;
+}
