@@ -1,12 +1,9 @@
+/*
+    ajustement de l'image de fond
+*/
 body {
-  
     display: flex;
     flex-direction: column;
     background: url(img/backgrnd.gif) no-repeat center;
     background-size: cover;
-  }
-
-a {
-    text-decoration: none;
-    color: tomato;
 }
