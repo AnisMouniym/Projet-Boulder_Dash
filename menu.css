@@ -1,0 +1,24 @@
+/*
+  importe la police d'écriture
+*/
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+#menu {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+  }
+  
+button {
+    font-family: 'Press Start 2P', cursive;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: grey;
+    color: white;
+    display: block;
+    text-transform: uppercase;
+    border-radius: 165px;
+    width: 300px;
+    margin-bottom: 30px;
+}
