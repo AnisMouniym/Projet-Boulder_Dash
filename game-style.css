@@ -10,15 +10,17 @@ body {
 }
 
 button {
-  font-family: 'Press Start 2P', cursive;
-  padding: 15px;
+  display: block;
   box-sizing: border-box;
+  font-family: 'Press Start 2P', cursive;
+  padding: 5px;
+  block-size: auto;
   background-color: grey;
   color: white;
   display: block;
   text-transform: uppercase;
   border-radius: 165px;
-  width: 200px;
+  width: 150px;
   margin-bottom: 30px;
 }
 
@@ -26,11 +28,9 @@ a {
   text-decoration: none;
 }
 
-#menu {
-  display: block;
-  margin-right: auto;
+div {
+  width: min-content;
 }
-
 #logo {
-  width: 15%;
+  width: 150px;
 }

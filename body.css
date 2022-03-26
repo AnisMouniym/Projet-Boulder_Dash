@@ -2,12 +2,11 @@ body {
   
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: url(https://static.wixstatic.com/media/90c0e5_553bc31615bc4328baec4c1de650073a~mv2.gif) no-repeat center;
+    background: url(img/backgrnd.gif) no-repeat center;
     background-size: cover;
   }
 
 a {
     text-decoration: none;
+    color: tomato;
 }
