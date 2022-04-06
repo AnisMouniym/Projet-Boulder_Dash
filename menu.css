@@ -23,7 +23,7 @@
     margin-bottom: 30px;
 }
 
-button:hover {
+#home > button:hover {
     color: grey;
     background-color: white;
 }

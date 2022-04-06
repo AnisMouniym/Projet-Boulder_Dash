@@ -2,15 +2,15 @@
     alignement du lien surprise
 */
 
-footer > a {
-  bottom: 0%;
-  float: right;
+footer > button {
+  position: absolute;
+  bottom: 0;
   margin-right: 20px;
   text-decoration: none;
   color: red;
 }
 
-footer > a:hover {
+footer > button:hover {
   text-transform: uppercase;
-  font-size: xx-large;
+  font-size: 1500%;
 }
