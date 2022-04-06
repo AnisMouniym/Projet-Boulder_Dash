@@ -6,7 +6,7 @@
     alignement des boutons
 */
 
-.home-menu {
+#home {
     align-self: center;
     margin-top: 100px;
 }
