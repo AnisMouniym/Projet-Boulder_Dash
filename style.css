@@ -2,6 +2,7 @@
     importation des différents .css
 */
 @import url(./menu.css);
+@import url(./game.css);
 @import url(./logo.css);
 @import url(./body.css);
 @import url(./footer.css);

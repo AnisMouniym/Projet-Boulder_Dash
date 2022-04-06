@@ -11,7 +11,7 @@
     margin-top: 100px;
 }
   
-button {
+#home > button {
     font-family: 'Press Start 2P', cursive;
     padding: 10px;
     background-color: grey;
