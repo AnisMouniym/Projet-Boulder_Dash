@@ -20,7 +20,7 @@ document.getElementById("accueil")
           }
 }, false);
 
-document.getElementById("recomencer")
+document.getElementById("recommencer")
         .addEventListener("click", function() {
           if (confirm("Voulez-vous vraiment recommencer la partie ?")) {
             document.getElementById("home").hidden = false;
