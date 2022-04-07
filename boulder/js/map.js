@@ -1,15 +1,21 @@
 
 
 let fichier = "";
+let nbrDiamant=0;
 const tab = [];
 
 document.addEventListener("DOMContentLoaded", () => {
   chargerFichier();
 });
 
+function chargerFichier() {
+  fetch("./test.txt").then((res) => res.text()).then((text) => {
+    fichier = text;
+    chargerTab();
+  });
+}
+
 function chargerTab() {
-  const grille = document.getElementById("grille");
-  grille.innerHTML = '';
   for (let ligne of fichier.split(/\n/)) {
     const tab1 = [];
     for (let i = 0; i < ligne.length; i++) {
@@ -24,6 +30,7 @@ function chargerTab() {
       }
       if (ligne[i] === "D") {
         tab1.push("D");
+        nbrDiamant+=1;
       }
       if (ligne[i] === "V") {
         tab1.push("V");
@@ -36,15 +43,7 @@ function chargerTab() {
     }
     tab.push(tab1);
   }
-  console.log(tab);
   afficherTab();
-}
-
-function chargerFichier() {
-  fetch("./test.txt").then((res) => res.text()).then((text) => {
-    fichier = text;
-    chargerTab();
-  });
 }
 
 function afficherTab() {
@@ -77,6 +76,7 @@ function afficherTab() {
     }
     tabHTML += '</div>';
     grille.innerHTML += tabHTML;
+
   } 
 }
 
