@@ -41,7 +41,7 @@ function chargerTab() {
 }
 
 function chargerFichier() {
-  fetch("../level.txt").then((res) => res.text()).then((text) => {
+  fetch("./test.txt").then((res) => res.text()).then((text) => {
     fichier = text;
     chargerTab();
   });
