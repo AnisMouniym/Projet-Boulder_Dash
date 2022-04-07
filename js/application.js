@@ -18,14 +18,4 @@ document.getElementById("accueil")
           }
 }, false);
 
-document.getElementById("recommencer")
-        .addEventListener("click", function() {
-          if (confirm("Voulez-vous vraiment recommencer la partie ?")) {
-            document.getElementById("home").hidden = false;
-            document.getElementById("game").hidden = true;
-            document.getElementById("surprise").hidden = false;
-            d1.style.display = "flex";
-          }
-}, false);
-
 

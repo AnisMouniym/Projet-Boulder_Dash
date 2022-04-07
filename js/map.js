@@ -1,3 +1,5 @@
+
+
 let fichier = "";
 const tab = [];
 
@@ -77,3 +79,4 @@ function afficherTab() {
     grille.innerHTML += tabHTML;
   } 
 }
+
