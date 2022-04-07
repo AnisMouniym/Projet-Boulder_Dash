@@ -1,0 +1,50 @@
+.tab {
+  display: flex;
+}
+
+.terre {
+  background: url("img/terre.jfif");
+  background-size: contain;
+  width: 32px;
+  height: 32px;
+}
+
+.rocher {
+  background: url("img/Pierre.png");
+  background-size: contain;
+  width: 32px;
+  height: 32px;
+}
+
+.diamant {
+  background: url("img/Diamant.png");
+  background-size: contain;
+  width: 32px;
+  height: 32px;
+}
+
+.mur {
+  background: url("img/mur.jfif");
+  background-size: contain;
+  width: 32px;
+  height: 32px;
+}
+
+.vide {
+  background-color: grey;
+  width: 32px;
+  height: 32px;
+}
+
+.player {
+  background: url("img/Personnage.png");
+  background-size: contain;
+  width: 32px;
+  height: 32px;
+}
+
+#grille {
+  color: grey;
+  align-self: center;
+  
+}

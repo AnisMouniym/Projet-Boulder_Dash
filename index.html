@@ -10,12 +10,11 @@
 
   <link rel="icon" href="ico/icon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
-
-
 </head>
     
 <body>    
   <img src="img/logo.png" alt="logo Boulder dash" id="logo"/>
+
   <div id="home">
     <button id="newgame">Nouvelle partie</button>
     <button>Reprendre la partie </button>
@@ -23,20 +22,35 @@
   </div>
 
   <div id="game" hidden>
+
     <button id="accueil">accueil</button>
     <button id="recommencer">recommencer</button>
+    <div id="grille">
+
+    </div>
+
+<!-- 
+    <div id="score">
+      <p>Score : <span id="score_value">0</span></p>
+      <p>Vies : <span id="vies_value">3</span></p>
+    </div>
+-->
+    <script src="js/map.js"></script>
+    <script src="./js/player.js"></script>
   </div>
+
+  
 
   <div id="quit" hidden>
     <span>Êtes-vous sûr de vouloir quitter la partie ?</span>
     <button id="oui">Oui</button>
     <button id="non">Non</button>
   </div>
-  
+
   <footer id="surprise">
     <a href="https://bde-mega.fr" target="_blank">surprise</a>
   </footer>
-  <script type="text/javascript" src="application.js"></script>
-</body>
-      
+
+  <script type="text/javascript" src="./js/application.js"></script>
+</body>  
 </html>

@@ -5,9 +5,7 @@ document.getElementById("newgame")
   document.getElementById("home").hidden = true;
   document.getElementById("game").hidden = false;
   document.getElementById("surprise").hidden = true;
-  d1.style.display = "none";
-  
-  
+  d1.style.display = "none"; 
 }, false);
 
 document.getElementById("accueil")
@@ -29,8 +27,5 @@ document.getElementById("recommencer")
             d1.style.display = "flex";
           }
 }, false);
-
-
-//fonction qui demande de confirmer oui ou non lorsque l'on clique sur le bouton "acceuil"
 
 
