@@ -11,6 +11,6 @@ footer > a {
 }
 
 footer > a:hover {
-  font-size: 400%;
+  font-size: 200%;
   text-transform: uppercase;
 }
