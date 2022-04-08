@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function chargerFichier() {
-  fetch("./test.txt").then((res) => res.text()).then((text) => {
+  fetch("../level.txt").then((res) => res.text()).then((text) => {
     fichier = text;
     chargerTab();
   });
