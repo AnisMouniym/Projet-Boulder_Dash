@@ -4,7 +4,7 @@ let y=0;
 let fichier = "";
 let nbrDiamant=0;
 let tab = [];
-let tab1 = [];
+let tab1=[];
 document.addEventListener("DOMContentLoaded", () => {
   chargerFichier();
 });
@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
 function chargerFichier() {
   fetch("../level.txt").then((res) => res.text()).then((text) => {
     fichier = text;
-    tab = [];
-    chargerTab();   
+    tab=[];
+    chargerTab();
   });
 }
 
@@ -43,6 +43,7 @@ function chargerTab() {
       else if (ligne[i] === "0") {
       }
     }
+
     tab.push(tab1);
   }
   afficherTab();
@@ -84,3 +85,8 @@ function afficherTab() {
   } 
 }
 
+function nouvelleMap(){
+  tab1=[];
+  tab=[]
+
+}

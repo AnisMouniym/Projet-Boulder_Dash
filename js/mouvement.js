@@ -1,14 +1,12 @@
 let nbrDeplacement =0;
 let nbrDiamantCollecte =0;
 let compteur =0;
-
+let mort=false;
+let a=0;
 document.addEventListener("keyup", function(event){
-
-    document.getElementById("collected").innerHTML = nbrDiamantCollecte;
-    document.getElementById("total").innerHTML = nbrDiamant;
-    document.getElementById("deplacement").innerHTML = nbrDeplacement;
-    
     if (nbrDiamant!=nbrDiamantCollecte){
+        if(mort!=true){
+            
         switch (event.code)
         {
             case 'ArrowUp':
@@ -53,7 +51,7 @@ document.addEventListener("keyup", function(event){
                         document.querySelector("#grille").children[x-1].children[y].className='vide';
                         x=0;
                         y=0;
-                        console.log('MORT');
+                        mort=true;
                     }
                 }
             }
@@ -105,15 +103,20 @@ document.addEventListener("keyup", function(event){
             if(document.querySelector("#grille").children[j].children[i].classList.contains('diamant')===true){
                 compteur+=1;
             }
+            a=0;
+            if(document.querySelector("#grille").children[j].children[i].classList.contains('player')===true){
+                mort=false;
+            }
         }
     }
     nbrDiamantCollecte=nbrDiamant-compteur;
-    console.log('nombre de diamant présents = ' + nbrDiamant + ' | nombre de diamant collectés = ' + nbrDiamantCollecte );
+    console.log('nombre de diamant présents = ' + nbrDiamant + ' | nombre de diamant collectés = ' + nbrDiamantCollecte + ' | nombre de déplacement = '+ nbrDeplacement);
     if (nbrDiamant===nbrDiamantCollecte){
         console.log('VICTOIRE');
 
     }
     }
+    console.log(mort)
+}
 });
-
 

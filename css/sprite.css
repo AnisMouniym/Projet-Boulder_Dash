@@ -3,28 +3,28 @@
 }
 
 .terre {
-  background: url("img/terre.jfif");
+  background: url("../img/terre.jfif");
   background-size: contain;
   width: 32px;
   height: 32px;
 }
 
 .rocher {
-  background: url("img/Pierre.png");
+  background: url("../img/Pierre.png");
   background-size: contain;
   width: 32px;
   height: 32px;
 }
 
 .diamant {
-  background: url("img/Diamant.gif");
+  background: url("../img/Diamant.gif");
   background-size: contain;
   width: 32px;
   height: 32px;
 }
 
 .mur {
-  background: url("img/mur.jfif");
+  background: url("../img/mur.jfif");
   background-size: contain;
   width: 32px;
   height: 32px;
@@ -37,7 +37,7 @@
 }
 
 .player {
-  background: url("img/Personnage.png");
+  background: url("../img/Personnage.png");
   background-size: contain;
   width: 32px;
   height: 32px;
