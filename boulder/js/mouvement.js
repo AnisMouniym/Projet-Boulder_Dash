@@ -1,10 +1,9 @@
-let x=1;
-let y=1;
 let nbrDeplacement =0;
-let nbrDiamantCollecté =0;
+let nbrDiamantCollecte =0;
 let compteur =0;
 
 document.addEventListener("keyup", function(event){
+    if (nbrDiamant!=nbrDiamantCollecte){
         switch (event.code)
         {
             case 'ArrowUp':
@@ -42,21 +41,24 @@ document.addEventListener("keyup", function(event){
                 
             case 'ArrowDown':
             case 'KeyS' : 
+            if (document.querySelector("#grille").children[x-1].children[y].classList.contains('rocher')===true){
+                if(document.querySelector("#grille").children[x+1].children[y].classList.contains('rocher')===false){
+                    if(document.querySelector("#grille").children[x+1].children[y].classList.contains('mur')===false){
+                        document.querySelector("#grille").children[x].children[y].className='rocher';
+                        document.querySelector("#grille").children[x-1].children[y].className='vide';
+                        x=0;
+                        y=0;
+                        console.log('MORT');
+                    }
+                }
+            }
+
             if (document.querySelector("#grille").children[x+1].children[y].classList.contains('rocher')===false){
                 if (document.querySelector("#grille").children[x+1].children[y].classList.contains('mur')===false){
             document.querySelector("#grille").children[x+1].children[y].className="player";
             document.querySelector("#grille").children[x].children[y].className="vide";
             x+=1;
             nbrDeplacement+=1;
-                }
-            }
-            if (document.querySelector("#grille").children[x-1].children[y].classList.contains('rocher')===true){
-                if(document.querySelector("#grille").children[x+1].children[y].classList.contains('rocher')===false){
-                    document.querySelector("#grille").children[x].children[y].className='rocher';
-                    document.querySelector("#grille").children[x-1].children[y].className='vide';
-                    x=0;
-                    y=0;
-                    console.log('MORT');
                 }
             }
                 break;
@@ -100,10 +102,12 @@ document.addEventListener("keyup", function(event){
             }
         }
     }
-    nbrDiamantCollecté=nbrDiamant-compteur;
-    console.log('nombre de diamant présents = ' + nbrDiamant + ' | nombre de diamant collectés = ' + nbrDiamantCollecté );
-    if (nbrDiamant===nbrDiamantCollecté){
+    nbrDiamantCollecte=nbrDiamant-compteur;
+    console.log('nombre de diamant présents = ' + nbrDiamant + ' | nombre de diamant collectés = ' + nbrDiamantCollecte );
+    if (nbrDiamant===nbrDiamantCollecte){
         console.log('VICTOIRE');
-    }
 
+    }
+    }
 });
+

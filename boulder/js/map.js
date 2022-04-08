@@ -1,4 +1,5 @@
-
+let x=0;
+let y=0;
 
 let fichier = "";
 let nbrDiamant=0;
@@ -49,7 +50,7 @@ function chargerTab() {
 function afficherTab() {
   const grille = document.getElementById("grille");
   grille.innerHTML = '';
-  for (let i = 0; i < tab.length; ++i) {
+  for (let i = 0; i < tab.length; ++i) { 
     let tabHTML = '<div class="tab">';
     for (let j = 0; j < tab[i].length; ++j) {
       if (tab[i][j] === "M") {
@@ -69,6 +70,8 @@ function afficherTab() {
       }
       if (tab[i][j] === "P") {
         tabHTML += '<div class="player"></div>';
+        x=i;
+        y=j;
       }
       else if (tab[i] === "0") {
         tabHTML += '<div class="autre"></div>';
