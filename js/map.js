@@ -3,8 +3,8 @@ let y=0;
 
 let fichier = "";
 let nbrDiamant=0;
-const tab = [];
-
+let tab = [];
+let tab1 = [];
 document.addEventListener("DOMContentLoaded", () => {
   chargerFichier();
 });
@@ -12,13 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
 function chargerFichier() {
   fetch("../level.txt").then((res) => res.text()).then((text) => {
     fichier = text;
-    chargerTab();
+    tab = [];
+    chargerTab();   
   });
 }
 
 function chargerTab() {
   for (let ligne of fichier.split(/\n/)) {
-    const tab1 = [];
+    tab1 = [];
     for (let i = 0; i < ligne.length; i++) {
       if (ligne[i] === "M") {
         tab1.push("M");

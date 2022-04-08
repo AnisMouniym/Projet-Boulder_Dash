@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-#game > button {
+#game> button {
   font-family: 'Press Start 2P', cursive;
   padding: 10px;
   font-size: 10%;
@@ -18,7 +18,11 @@
     background-color: white;
 }
 
+
 #grille {
   margin-left: 18%;
 }
-  
+
+#stats {
+  right: 0;
+}

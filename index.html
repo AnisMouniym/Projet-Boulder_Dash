@@ -23,28 +23,30 @@
 
   <div id="home">
     <button id="newgame">Nouvelle partie</button>
-    <button>Reprendre la partie </button>
-    <button>Charger un niveau</button>
+    <button id="reprendre">Reprendre la partie </button>
+    <button id="charger">Charger un niveau</button>
   </div>
 
   <div id="game" hidden>
-
-    <button id="accueil">accueil</button>
-    <button id="recommencer" onclick="window.location.href='./index.html'">recommencer</button>
-    <div id="grille">
     <img src="img/logo.png" alt="logo Boulder dash" id="logo2"/>
+      <button id="accueil">accueil</button>
+      <button id="recommencer" onclick=chargerFichier()>recommencer</button>
+      
+ 
+    <div id="grille">
 
-  </div>
-
-    <div id="score">
-      <p> <span id="collected"></span> / <span id="total"></span> Diamants collectés</p>
     </div>
-    
-    <script src="js/map.js"></script>
-    <script src="./js/mouvement.js"></script>
+    <div id="stats">
+      <p> <span id="collected"></span> / <span id="total"></span> Diamants collectés <span id="deplacement"> Deplacements </span></p>
+    </div>
+
+
+
   </div>
 
-  
+
+    
+
 
   <div id="quit" hidden>
     <span>Êtes-vous sûr de vouloir quitter la partie ?</span>
@@ -57,5 +59,7 @@
   </footer>
 
   <script type="text/javascript" src="./js/application.js"></script>
+  <script src="js/map.js"></script>
+  <script src="./js/mouvement.js"></script>  
 </body>  
 </html>

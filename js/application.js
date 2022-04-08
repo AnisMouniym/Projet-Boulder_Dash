@@ -1,6 +1,6 @@
 let d1 = document.getElementById("logo")
 
-document.getElementById("newgame")
+document.getElementById("reprendre")
         .addEventListener("click", function() {
   document.getElementById("home").hidden = true;
   document.getElementById("game").hidden = false;
@@ -17,6 +17,7 @@ document.getElementById("accueil")
             d1.style.display = "flex";
           }
 }, false);
+
 
 var playing = !!('ontouchstart' in window) || !!('ontouchstart' in document.documentElement) || 
 !!window.ontouchstart || (!!window.Touch && !!window.Touch.length) || !!window.onmsgesturechange || 
