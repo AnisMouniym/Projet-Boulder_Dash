@@ -17,7 +17,7 @@
 }
 
 .diamant {
-  background: url("img/Diamant.png");
+  background: url("img/Diamant.gif");
   background-size: contain;
   width: 32px;
   height: 32px;
@@ -31,7 +31,7 @@
 }
 
 .vide {
-  background-color: rgb(94,94,94);
+  background-color: rgb(97,97,97);
   width: 32px;
   height: 32px;
 }

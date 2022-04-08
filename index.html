@@ -7,17 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>BOULDER DASH</title>
+
+  <link rel="icon" href="img/icon.gif" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
+    
+<body> 
   <figure>
     <audio autoplay loop preload="auto" src="/sound/main.mp3" id="music">
             Votre navigateur ne supporte pas l'élément audio.
     </audio>
   </figure>
-  <link rel="icon" href="ico/icon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="style.css">
-</head>
-    
-<body> 
-
   <img id="mute" src="img/play.png" alt="button" title="Mute/Unmute">  
   <img src="img/logo.png" alt="logo Boulder dash" id="logo"/>
 
@@ -32,17 +32,16 @@
     <button id="accueil">accueil</button>
     <button id="recommencer" onclick="window.location.href='./index.html'">recommencer</button>
     <div id="grille">
+    <img src="img/logo.png" alt="logo Boulder dash" id="logo2"/>
 
   </div>
 
-<!-- 
     <div id="score">
-      <p>Score : <span id="score_value">0</span></p>
-      <p>Vies : <span id="vies_value">3</span></p>
+      <p> <span id="collected"></span> / <span id="total"></span> Diamants collectés</p>
     </div>
--->
+    
     <script src="js/map.js"></script>
-    <script src="./js/player.js"></script>
+    <script src="./js/mouvement.js"></script>
   </div>
 
   

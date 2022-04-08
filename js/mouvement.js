@@ -102,12 +102,17 @@ document.addEventListener("keyup", function(event){
             }
         }
     }
-    nbrDiamantCollecte=nbrDiamant-compteur;
+
     console.log('nombre de diamant présents = ' + nbrDiamant + ' | nombre de diamant collectés = ' + nbrDiamantCollecte );
     if (nbrDiamant===nbrDiamantCollecte){
         console.log('VICTOIRE');
 
     }
+    nbrDiamantCollecte=nbrDiamant-compteur;
+    document.getElementById("collected").innerHTML = nbrDiamantCollecte;
+    document.getElementById("total").innerHTML = nbrDiamant;
+    document.getElementById("deplacement").innerHTML = nbrDeplacement;
     }
 });
+
 
