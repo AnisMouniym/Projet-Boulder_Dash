@@ -19,6 +19,8 @@ document.getElementById("accueil")
 }, false);
 
 
+
+
 var playing = !!('ontouchstart' in window) || !!('ontouchstart' in document.documentElement) || 
 !!window.ontouchstart || (!!window.Touch && !!window.Touch.length) || !!window.onmsgesturechange || 
 (window.DocumentTouch && window.document instanceof window.DocumentTouch),

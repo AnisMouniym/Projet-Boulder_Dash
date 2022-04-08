@@ -18,6 +18,10 @@
     background-color: white;
 }
 
+#span {
+  margin-left: 10px;
+  margin-right: 10px;
+}
 
 #grille {
   margin-left: 18%;
