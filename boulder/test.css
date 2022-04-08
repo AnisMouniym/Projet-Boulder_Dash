@@ -37,7 +37,7 @@
 }
 
 .player {
-  background: url("Personnage.png");
+  background: url("Player.gif");
   background-size: contain;
   width: 32px;
   height: 32px;

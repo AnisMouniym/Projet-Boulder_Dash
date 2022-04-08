@@ -6,6 +6,7 @@ let a=0;
 document.addEventListener("keyup", function(event){
     if (nbrDiamant!=nbrDiamantCollecte){
         if(mort!=true){
+            
         switch (event.code)
         {
             case 'ArrowUp':
@@ -50,7 +51,7 @@ document.addEventListener("keyup", function(event){
                         document.querySelector("#grille").children[x-1].children[y].className='vide';
                         x=0;
                         y=0;
-                        console.log('MORT');
+                        mort=true;
                     }
                 }
             }
