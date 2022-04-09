@@ -1,5 +1,6 @@
 .tab {
   display: flex;
+  
 }
 
 .terre {
@@ -43,8 +44,23 @@
   height: 32px;
 }
 
+.black{
+  background: url("../img/Black.png");
+  background-size: contain;
+  width: 32px;
+  height: 32px;
+}
+
+.white{
+  background: url("../img/White.png");
+  background-size: contain;
+  width: 32px;
+  height: 32px;
+}
+
 #grille {
   color: rgb(94,94,94);
   align-self: center;
-  
+  background-repeat: no-repeat;
+
 }
