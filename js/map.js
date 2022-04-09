@@ -16,6 +16,9 @@ function chargerFichier() {
       fichier = text;
       compteur=0;
       tab=[];
+      nbrDiamant=0;
+      nbrDeplacement=0;
+      nbrDiamantCollecte=0;
       mort=false;
       chargerTab();
   });
