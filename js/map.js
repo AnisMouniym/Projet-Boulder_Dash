@@ -64,6 +64,10 @@ function chargerTab() {
 
     tab.push(tab1);
   }
+  document.getElementById("total").innerHTML = nbrDiamant;
+  document.getElementById("collected").innerHTML = nbrDiamantCollecte;
+  document.getElementById("deplacement").innerHTML = nbrDeplacement;
+
   afficherTab();
 }
 

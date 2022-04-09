@@ -3,6 +3,8 @@ let nbrDiamantCollecte =0;
 let compteur =0;
 let mort=false;
 let a=1;
+
+
 document.addEventListener("keyup", function(event){
     if (nbrDiamant!=nbrDiamantCollecte){
         if(mort!=true){
@@ -120,6 +122,7 @@ document.addEventListener("keyup", function(event){
     compteur=0;
     for (let i = 0; i < 32; ++i) {
         for (let j = 0; j < 16; ++j) {
+            nbrDiamantCollecte=nbrDiamant-compteur;
             if(document.querySelector("#grille").children[j].children[i].classList.contains('rocher')===true){
                 if(document.querySelector("#grille").children[j+1].children[i].classList.contains('vide')===true) {
                     document.querySelector("#grille").children[j+1].children[i].className='rocher';
@@ -134,7 +137,13 @@ document.addEventListener("keyup", function(event){
             }
         }
     }
-    nbrDiamantCollecte=nbrDiamant-compteur;
+
+    document.getElementById("collected").innerHTML = nbrDiamantCollecte;
+    document.getElementById("total").innerHTML = nbrDiamant;
+    document.getElementById("deplacement").innerHTML = nbrDeplacement;
+
+
+
     console.log('nombre de diamant présents = ' + nbrDiamant + ' | nombre de diamant collectés = ' + nbrDiamantCollecte + ' | nombre de déplacement = '+ nbrDeplacement);
     if (nbrDiamant===nbrDiamantCollecte){
         console.log('VICTOIRE');
