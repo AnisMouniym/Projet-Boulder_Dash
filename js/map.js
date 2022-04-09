@@ -5,16 +5,25 @@ let fichier = "";
 let nbrDiamant=0;
 let tab = [];
 let tab1=[];
+
 document.addEventListener("DOMContentLoaded", () => {
   chargerFichier();
 });
 
 function chargerFichier() {
-  fetch("../level.txt").then((res) => res.text()).then((text) => {
-    fichier = text;
-    tab=[];
-    chargerTab();
+  if(a<5){
+    fetch("../Niveau"+a+".txt").then((res) => res.text()).then((text) => {
+      fichier = text;
+      compteur=0;
+      tab=[];
+      mort=false;
+      chargerTab();
   });
+}
+else {
+  a=1;
+  //chargerFichier();
+}
 }
 
 function chargerTab() {
@@ -39,6 +48,12 @@ function chargerTab() {
       }
       if (ligne[i] === "P") {
         tab1.push("P");
+      }
+      if (ligne[i] === "W") {
+        tab1.push("W")
+      }
+      if (ligne[i] === "B") {
+        tab1.push("B")
       }
       else if (ligne[i] === "0") {
       }
@@ -75,6 +90,12 @@ function afficherTab() {
         x=i;
         y=j;
       }
+      if (tab[i][j] === "B") {
+        tabHTML += '<div class="black"></div>';
+      }
+      if (tab[i][j] === "W") {
+        tabHTML += '<div class="white"></div>';
+      }
       else if (tab[i] === "0") {
         tabHTML += '<div class="autre"></div>';
       }
@@ -85,8 +106,3 @@ function afficherTab() {
   } 
 }
 
-function nouvelleMap(){
-  tab1=[];
-  tab=[]
-
-}
