@@ -8,6 +8,16 @@ document.getElementById("reprendre")
   d1.style.display = "none"; 
 }, false);
 
+document.getElementById("newgame")
+        .addEventListener("click", function() {
+  document.getElementById("home").hidden = true;
+  document.getElementById("game").hidden = false;
+  document.getElementById("surprise").hidden = true;
+  Niveau=1
+  chargerFichierTexte();
+  d1.style.display = "none"; 
+}, false);
+
 document.getElementById("accueil")
         .addEventListener("click", function() {
           if (confirm("Voulez-vous vraiment quitter la partie ?")) {

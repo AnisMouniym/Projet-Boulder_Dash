@@ -1,115 +1,107 @@
-let x=0;
-let y=0;
+let PositionX=0;
+let PositionY=0;
 
 let fichier = "";
 let nbrDiamant=0;
-let tab = [];
-let tab1=[];
+let tableauFinal = [];
+let tableauTemporaire=[];
 
 document.addEventListener("DOMContentLoaded", () => {
-  chargerFichier();
+  chargerFichierTexte();
 });
 
-function chargerFichier() {
-  if(a<5){
-    fetch("../Niveau"+a+".txt").then((res) => res.text()).then((text) => {
+function chargerFichierTexte() {
+  if(Niveau<5){
+    fetch("../Niveau"+Niveau+".txt").then((res) => res.text()).then((text) => {
       fichier = text;
-      compteur=0;
-      tab=[];
+      compteurDiamant=0;
+      tableauFinal=[];
       nbrDiamant=0;
       nbrDeplacement=0;
       nbrDiamantCollecte=0;
       mort=false;
-      chargerTab();
+      chargerTableauTemporaire();
   });
-}
-else {
-  a=1;
-  //chargerFichier();
 }
 }
 
-function chargerTab() {
+function chargerTableauTemporaire() {
   for (let ligne of fichier.split(/\n/)) {
-    tab1 = [];
+    tableauTemporaire = [];
     for (let i = 0; i < ligne.length; i++) {
       if (ligne[i] === "M") {
-        tab1.push("M");
+        tableauTemporaire.push("M");
       }
       if (ligne[i] === "T") {
-        tab1.push("T");
+        tableauTemporaire.push("T");
       }
       if (ligne[i] === "R") {
-        tab1.push("R");
+        tableauTemporaire.push("R");
       }
       if (ligne[i] === "D") {
-        tab1.push("D");
+        tableauTemporaire.push("D");
         nbrDiamant+=1;
       }
       if (ligne[i] === "V") {
-        tab1.push("V");
+        tableauTemporaire.push("V");
       }
       if (ligne[i] === "P") {
-        tab1.push("P");
+        tableauTemporaire.push("P");
       }
       if (ligne[i] === "W") {
-        tab1.push("W")
+        tableauTemporaire.push("W")
       }
       if (ligne[i] === "B") {
-        tab1.push("B")
-      }
-      else if (ligne[i] === "0") {
+        tableauTemporaire.push("B")
       }
     }
-
-    tab.push(tab1);
+    tableauFinal.push(tableauTemporaire);
   }
   document.getElementById("total").innerHTML = nbrDiamant;
   document.getElementById("collected").innerHTML = nbrDiamantCollecte;
   document.getElementById("deplacement").innerHTML = nbrDeplacement;
 
-  afficherTab();
+  afficherTableauFinal();
 }
 
-function afficherTab() {
+function afficherTableauFinal() {
   const grille = document.getElementById("grille");
   grille.innerHTML = '';
-  for (let i = 0; i < tab.length; ++i) { 
+  for (let i = 0; i < tableauFinal.length; ++i) { 
     let tabHTML = '<div class="tab">';
-    for (let j = 0; j < tab[i].length; ++j) {
-      if (tab[i][j] === "M") {
+    for (let j = 0; j < tableauFinal[i].length; ++j) {
+      if (tableauFinal[i][j] === "M") {
         tabHTML += '<div class="mur"></div>';
       }
-      if (tab[i][j] === "T") {
+      if (tableauFinal[i][j] === "T") {
         tabHTML += '<div class="terre"></div>';
       }
-      if (tab[i][j] === "R") {
+      if (tableauFinal[i][j] === "R") {
         tabHTML += '<div class="rocher"></div>';
       }
-      if (tab[i][j] === "D") {
+      if (tableauFinal[i][j] === "D") {
         tabHTML += '<div class="diamant"></div>';
       }
-      if (tab[i][j] === "V") {
+      if (tableauFinal[i][j] === "V") {
         tabHTML += '<div class="vide"></div>';
       }
-      if (tab[i][j] === "P") {
+      if (tableauFinal[i][j] === "P") {
         tabHTML += '<div class="player"></div>';
-        x=i;
-        y=j;
+        PositionX=i;
+        PositionY=j;
       }
-      if (tab[i][j] === "B") {
+      if (tableauFinal[i][j] === "B") {
         tabHTML += '<div class="black"></div>';
       }
-      if (tab[i][j] === "W") {
+      if (tableauFinal[i][j] === "W") {
         tabHTML += '<div class="white"></div>';
       }
-      else if (tab[i] === "0") {
+      else if (tableauFinal[i] === "0") {
         tabHTML += '<div class="autre"></div>';
       }
     }
     tabHTML += '</div>';
     grille.innerHTML += tabHTML;
-
   } 
 }
 
