@@ -106,9 +106,10 @@ function afficherTableauFinal() {
   } 
 }
 
-//changer de musique pour win
+//changer de musique pour win (ne fonctionne pas)
 function win(){
   if(Niveau===4){
-      document.getElementById('win').play();
+    document.getElementById("music").pause();
+    document.getElementById("win").play();
   }
 }
