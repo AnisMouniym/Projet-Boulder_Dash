@@ -10,6 +10,9 @@ body {
     background-size: cover;
 }
 
+/*
+    supression du trait sous lien
+*/
 a {
     text-decoration: none;
 }

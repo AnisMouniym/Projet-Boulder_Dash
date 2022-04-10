@@ -1,7 +1,9 @@
 /*
-  importe la police d'écriture des boutons
+    importe la police d'écriture des boutons
 */
+
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 /*
     alignement des boutons
 */
@@ -23,6 +25,9 @@
     margin-bottom: 30px;
 }
 
+/*
+   changement de couleur lorsque la souris passe sur le bouton
+*/
 #home > button:hover {
     color: grey;
     background-color: white;

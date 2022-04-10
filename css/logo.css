@@ -1,5 +1,5 @@
 /*
-    alignement du logo
+    alignement du logo de la page d'accueil
 */
 
 #logo {
@@ -8,6 +8,10 @@
     margin-top: 100px;
     width: 40%;
 }
+
+/*
+    alignement du logo visible en jeu
+*/
 
 #logo2 {
     position: fixed;
