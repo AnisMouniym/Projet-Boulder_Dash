@@ -4,33 +4,32 @@ let mort=true;                                                                  
 let fichier = "";                                                                         //Variable fichier initialisé vide
 let nbrDiamant=0;                                                                         //Variable nbrDiamant initialisé à 0 
 let tableauFinal = [];                                                                    //Variable tableauFinal initalisé vide
-let tableauTemporaire=[];                                                                 //Variable tableauTemporaire
-let charger=false;                                                                        //Variable PositionX initialisé à 0
+let tableauTemporaire=[];                                                                 //Variable tableauTemporaire initialisé à vide
+
 
 document.addEventListener("DOMContentLoaded", () => {
   chargerFichierTexte();
 });
 
 function chargerFichierTexte() {
-  if(Niveau<5 && charger==false){
-    fetch("../Niveau"+Niveau+".txt").then((res) => res.text()).then((text) => {
-      fichier = text;
-      compteurDiamant=0;
-      tableauFinal=[];
-      nbrDiamant=0;
-      nbrDeplacement=0;
-      nbrDiamantCollecte=0;
-      mort=false;
-      chargerTableauTemporaire();
+  fetch("../Niveau"+Niveau+".txt").then((res) => res.text()).then((text) => {             //Lis le fichier .txt du dossier avec incrémentation à chaque fin de niveau
+    fichier = text;                                                                       //Le fichier .txt  est implémenter dans la variable fichier
+    compteurDiamant=0;                                                                    //Dans le cas d'un nouveau niveau le compteur de diamant doit être remis à zero
+    tableauFinal=[];                                                                      //De la même manière pour le tableau final qui servira à afficher notre jeu
+    nbrDiamant=0;                                                                         //De la même manière avec notre nombre de diamant total
+    nbrDeplacement=0;                                                                     //De la même manière pour le nombre de déplacement du personnage
+    nbrDiamantCollecte=0;                                                                 //De la même manière pour le nombre de diamant collecté
+    mort=false;                                                                           //La variable mort est donc mis en false car le jeu sera affiché
+    chargerTableauTemporaire();                                                           //Appel de la fonction chargerTableauTemporaire()
   });
-}
 }
 
 function chargerTableauTemporaire() {
-  for (let ligne of fichier.split(/\n/)) {
-    tableauTemporaire = [];
-    for (let i = 0; i < ligne.length; i++) {
-      if (ligne[i] === "M") {
+  for (let ligne of fichier.split(/\n/)) {                                                //Boucle avec détection de retour à la ligne du fichier
+    tableauTemporaire = [];                                                               //Remise à vide de la variable tableau temporaire
+    for (let i = 0; i < ligne.length; i++) {                                              //Boucle permettant de charger le tableau temporaire avec nos n lignes et i colonnes
+      /* Detection de la lettre dans le fichier pour la mettre dans le fichier tableau temporaire */
+      if (ligne[i] === "M") {                                                              
         tableauTemporaire.push("M");
       }
       if (ligne[i] === "T") {
@@ -41,7 +40,7 @@ function chargerTableauTemporaire() {
       }
       if (ligne[i] === "D") {
         tableauTemporaire.push("D");
-        nbrDiamant+=1;
+        nbrDiamant+=1;                                                                      //Si un diamant est détecter dans le fichier le nombre de diamant total est augmenté de 1
       }
       if (ligne[i] === "V") {
         tableauTemporaire.push("V");
@@ -56,18 +55,19 @@ function chargerTableauTemporaire() {
         tableauTemporaire.push("B")
       }
     }
-    tableauFinal.push(tableauTemporaire);
+    tableauFinal.push(tableauTemporaire);                                                   //Remplissage du tableau final à l'aide du tableau temporaire
   }
-  document.getElementById("total").innerHTML = nbrDiamant;
-  document.getElementById("collected").innerHTML = nbrDiamantCollecte;
-  document.getElementById("deplacement").innerHTML = nbrDeplacement;
+  document.getElementById("total").innerHTML = nbrDiamant;                                  //Recupération de la variable nbrDiamant pour l'affichage de la variable dans le jeu
+  document.getElementById("collected").innerHTML = nbrDiamantCollecte;                      //Recupération de la variable nbrDiamantCollecte pour l'affichage de la variable dans le jeu
+  document.getElementById("deplacement").innerHTML = nbrDeplacement;                        //Recupération de la variable nbrDeplacement pour l'affichage de la variable dans le jeu
 
-  afficherTableauFinal();
+  afficherTableauFinal();                                                                   //Appel de la fonction afficherTableauFinal()
 }
 
 function afficherTableauFinal() {
-  const grille = document.getElementById("grille");
+  const grille = document.getElementById("grille");                                         //Appel de l'élément grille qui vient du fichier index.html
   grille.innerHTML = '';
+  /* Permet d'afficher des div en html selon la lettre dans le tableauFinal */
   for (let i = 0; i < tableauFinal.length; ++i) { 
     let tabHTML = '<div class="tab">';
     for (let j = 0; j < tableauFinal[i].length; ++j) {
@@ -88,8 +88,8 @@ function afficherTableauFinal() {
       }
       if (tableauFinal[i][j] === "P") {
         tabHTML += '<div class="player"></div>';
-        PositionX=i;
-        PositionY=j;
+        PositionX=i;                                                                         //Permet d'obtenir la position X du joueur
+        PositionY=j;                                                                         //Permet d'obtenir la position Y du joueur
       }
       if (tableauFinal[i][j] === "B") {
         tabHTML += '<div class="black"></div>';
