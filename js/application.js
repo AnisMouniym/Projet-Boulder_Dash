@@ -56,13 +56,3 @@ ctrl.addEventListener('click', function(){
   ctrl.src = playing? 'img/play.png' : 'img/mute.png';
 }, false);
 
-//changer musique si niveau egale 4
-if(Niveau==4){
-  document.getElementById('music').pause()
-  document.getElementById('win').play()
-}
-
-if (Niveau==4) {
-  document.getElementById("game").hidden = true;
-  document.getElementById("surprise").hidden = false;
-}
