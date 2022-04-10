@@ -11,6 +11,16 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function chargerFichierTexte() {
+  if(a=1){
+    fichier = document.getElementById("file");
+    compteurDiamant=0;
+    tableauFinal=[];
+    nbrDiamant=0;
+    nbrDeplacement=0;
+    nbrDiamantCollecte=0;
+    mort=false;
+    chargerTableauTemporaire();
+  }
   if(Niveau<5){
     fetch("../Niveau"+Niveau+".txt").then((res) => res.text()).then((text) => {
       fichier = text;
@@ -24,7 +34,6 @@ function chargerFichierTexte() {
   });
 }
 }
-
 
 function chargerTableauTemporaire() {
   for (let ligne of fichier.split(/\n/)) {
