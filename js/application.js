@@ -1,13 +1,6 @@
 let d1 = document.getElementById("logo")
 
-document.getElementById("reprendre")
-        .addEventListener("click", function() {
-  document.getElementById("home").hidden = true;
-  document.getElementById("game").hidden = false;
-  document.getElementById("surprise").hidden = true;
-  d1.style.display = "none"; 
-}, false);
-
+// fonctionnalités du bouton nouvelle partie
 document.getElementById("newgame")
         .addEventListener("click", function() {
   document.getElementById("home").hidden = true;
@@ -18,6 +11,16 @@ document.getElementById("newgame")
   d1.style.display = "none"; 
 }, false);
 
+// fonctionnalités du bouton reprendre la partie
+document.getElementById("reprendre")
+        .addEventListener("click", function() {
+  document.getElementById("home").hidden = true;
+  document.getElementById("game").hidden = false;
+  document.getElementById("surprise").hidden = true;
+  d1.style.display = "none"; 
+}, false);
+
+// fonctionnalités du bouton charger une partie (qui ne fonctionne pas)
 document.getElementById("charger")
         .addEventListener("click", function() {
   document.getElementById("home").hidden = true;
@@ -25,6 +28,7 @@ document.getElementById("charger")
   d1.style.display = "none"; 
 }, false);
 
+// fonctionnalités du bouton acceuil + demande de confirmation
 document.getElementById("accueil")
         .addEventListener("click", function() {
           if (confirm("Voulez-vous vraiment quitter la partie ?")) {
@@ -36,7 +40,7 @@ document.getElementById("accueil")
           }
 }, false);
 
-
+//  fonctionnalités du bouton mute
 var playing = !!('ontouchstart' in window) || !!('ontouchstart' in document.documentElement) || 
 !!window.ontouchstart || (!!window.Touch && !!window.Touch.length) || !!window.onmsgesturechange || 
 (window.DocumentTouch && window.document instanceof window.DocumentTouch),
