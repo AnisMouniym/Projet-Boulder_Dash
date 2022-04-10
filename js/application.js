@@ -21,6 +21,7 @@ document.getElementById("newgame")
 document.getElementById("accueil")
         .addEventListener("click", function() {
           if (confirm("Voulez-vous vraiment quitter la partie ?")) {
+            mort=true;
             document.getElementById("home").hidden = false;
             document.getElementById("game").hidden = true;
             document.getElementById("surprise").hidden = false;

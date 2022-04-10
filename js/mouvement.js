@@ -1,7 +1,6 @@
 let nbrDeplacement=0;
 let nbrDiamantCollecte =0;
 let compteurDiamant=0;
-let mort=false;
 let Niveau=1;
 
 const Grille=document.querySelector("#grille");

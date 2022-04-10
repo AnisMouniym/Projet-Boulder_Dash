@@ -1,6 +1,6 @@
 let PositionX=0;
 let PositionY=0;
-
+let mort=true;
 let fichier = "";
 let nbrDiamant=0;
 let tableauFinal = [];
