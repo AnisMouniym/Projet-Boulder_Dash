@@ -18,11 +18,10 @@ document.getElementById("newgame")
   d1.style.display = "none"; 
 }, false);
 
-document.getElementById("upload")
+document.getElementById("charger")
         .addEventListener("click", function() {
   document.getElementById("home").hidden = true;
-  document.getElementById("game").hidden = false;
-  document.getElementById("surprise").hidden = true;
+  document.getElementById("upload").hidden = false;
   d1.style.display = "none"; 
 }, false);
 
