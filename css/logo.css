@@ -9,8 +9,8 @@
     width: 40%;
 }
 
-
 #logo2 {
+    position: fixed;
     top: 0;
     width: 10%;
 }

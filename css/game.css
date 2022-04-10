@@ -17,8 +17,7 @@
   text-transform: uppercase;
   border-radius: 165px;
   width: 150px;
-  margin-bottom: 10px;
-  position: relative;
+  margin-top: 4%;
 }
 
 #game > button:hover {
