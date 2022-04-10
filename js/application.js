@@ -60,3 +60,4 @@ ctrl.addEventListener('click', function(){
   ctrl.src = playing? 'img/play.png' : 'img/mute.png';
 }, false);
 
+

@@ -28,6 +28,7 @@
 /*
    changement de couleur lorsque la souris passe sur le bouton
 */
+
 #home > button:hover {
     color: grey;
     background-color: white;

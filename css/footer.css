@@ -13,6 +13,7 @@ footer > a {
 /*
     taille qui change lorsque la souris passe sur le lien
 */
+
 footer > a:hover {
   font-size: 200%;
   text-transform: uppercase;

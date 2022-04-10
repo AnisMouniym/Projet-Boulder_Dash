@@ -15,6 +15,16 @@ function playermort(){
                 Grille.children[PositionX-1].children[PositionY].className='vide';                              //Remplace le rocher par du vide
                 Grille.children[PositionX].children[PositionY].className='vide';                                //Remplace le personnage par du vide
                 mort=true;                                                                                      //Passe la variable mort en true
+                document.getElementById('music').pause();                                                       // Arrête la musique de fond
+                document.getElementById('music').currentTime = 0;                                               // Remet la musique de fond à 0
+                document.getElementById('death').play();                                                        // Joue la musique de mort
+                document.getElementById('recommencer').addEventListener('click', function() {
+                    if (mort === true) {
+                        document.getElementById('death').pause();                                               // Arrête la musique de mort
+                        document.getElementById('music').play();                                                // Relance la musique de fond
+                    }
+                }, false);
+                                                                                                      
             }
         }
     }
@@ -91,6 +101,9 @@ function gauche(){
         }
     }    
 }
+
+
+
 
 document.addEventListener("keyup", function(event){
     if (nbrDiamant!=nbrDiamantCollecte){                                                                        //Impossible de bouger si la partie est gagnée
@@ -174,3 +187,4 @@ document.addEventListener("keyup", function(event){
         }
     }
 });
+
