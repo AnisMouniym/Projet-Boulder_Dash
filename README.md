@@ -31,6 +31,6 @@ lien source: https://www.lamarmotte.info/index.php/2022/03/21/programmation-web-
 ![image](https://user-images.githubusercontent.com/95011291/162641344-3d0fb78b-a9b7-4958-9101-7b21ab1a8466.png)
 
 ## Problèmes
-- Lorsque l'on va dans l'accueil et que l'on reprend la partie le joueur se bloque. c'est surement du a une condition sur la variable mort qui a été mal géréé.
+- Lorsque l'on va dans l'accueil et que l'on reprend la partie le joueur se bloque. c'est surement du a une condition sur la variable mort qui a été mal gérée.
 - Charger un niveau ne fonctionne pas. On a pas réussi !
 - Le niveau 2 contient un bug de texture mural qui apparaît mal 
