@@ -15,6 +15,9 @@ lien source: https://www.lamarmotte.info/index.php/2022/03/21/programmation-web-
 #### Image de fond et logo
 ![image](https://user-images.githubusercontent.com/95011291/162641276-8bf6376c-d24a-42d4-879e-4aebf83358b6.png)
 
+![image](https://user-images.githubusercontent.com/95011291/162641557-572de9f8-d9a6-4238-b864-fd2180261270.png)
+
+
 #### Son et bouton mute
 ![image](https://user-images.githubusercontent.com/95011291/162641304-904e806c-5f9e-42bb-bc0d-c75220b2ff53.png)
 ![image](https://user-images.githubusercontent.com/95011291/162641310-35622ddd-dda0-4be9-88b4-7fd8a05336a9.png)
