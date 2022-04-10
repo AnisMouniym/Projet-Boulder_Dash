@@ -1,9 +1,96 @@
-let nbrDeplacement=0;
-let nbrDiamantCollecte =0;
-let compteurDiamant=0;
-let Niveau=1;
+let nbrDeplacement=0;                                                                                           //Variable du nombre de déplacement initialisé à 0
+let nbrDiamantCollecte =0;                                                                                      //Variable du nombre de diamant collecté initialisé à 0
+let compteurDiamant=0;                                                                                          //Variable du compteur de diamant initialisé à 0
+let Niveau=1;                                                                                                   //Variable du niveau initialisé à 0
+const Grille=document.querySelector("#grille");                                                                 //Variable Grille créer pour simplifier le code
 
-const Grille=document.querySelector("#grille");
+
+
+function playermort(){
+            /* Si un rocher est au dessus du joueur et que le joueur descend il meurt */
+    if (Grille.children[PositionX-1].children[PositionY].classList.contains('rocher')===true){                  //Verification d'un rocher placé au dessus du joueur
+        if(Grille.children[PositionX+1].children[PositionY].classList.contains('rocher')===false){              //Verification d'un rocher placé en dessous du joueur
+            if(Grille.children[PositionX+1].children[PositionY].classList.contains('mur')===false){             //Verification d'un mur placé en dessous du joueur
+                Grille.children[PositionX+1].children[PositionY].className='rocher';                            //Remplace la terre ou le diamant par le rocher
+                Grille.children[PositionX-1].children[PositionY].className='vide';                              //Remplace le rocher par du vide
+                Grille.children[PositionX].children[PositionY].className='vide';                                //Remplace le personnage par du vide
+                mort=true;                                                                                      //Passe la variable mort en true
+            }
+        }
+    }
+}
+
+function haut(){
+                                /* Déplacement du joueur vers le haut */
+    if (Grille.children[0].children[PositionY].classList.contains('player')===false){                           //Verification du personnage placé a la limite supérieur
+        if (Grille.children[PositionX-1].children[PositionY].classList.contains('rocher')===false){             //Verification d'un rocher placé au dessus du joueur
+            if (Grille.children[PositionX-1].children[PositionY].classList.contains('mur')===false){            //Verification d'un mur placé au dessus du joueur
+                Grille.children[PositionX-1].children[PositionY].className="player";                            //Remplace la terre ou le diamant par le joueur
+                Grille.children[PositionX].children[PositionY].className="vide";                                //Remplace le joueur par du vide
+                PositionX-=1;                                                                                   
+                nbrDeplacement+=1;
+            }
+        }
+    }
+}
+
+function bas(){
+                            /* Déplacement du joueur vers le bas */
+    if (Grille.children[PositionX+1].children[PositionY].classList.contains('rocher')===false){                 //Verification d'un rocher placé en dessous du joueur 
+        if (Grille.children[PositionX+1].children[PositionY].classList.contains('mur')===false){                //Verification d'un mur placé en dessous du joueur
+            Grille.children[PositionX+1].children[PositionY].className="player";                                //Remplace la terre ou le diamant par le joueur
+            Grille.children[PositionX].children[PositionY].className="vide";                                    //Remplace le joueur par du vide
+            PositionX+=1;
+            nbrDeplacement+=1;
+        }
+    }
+    
+}
+
+function droite(){
+                            /* Déplacement du joueur sur la droite */
+    if (Grille.children[PositionX].children[PositionY+1].classList.contains('rocher')===false){                 //Verification d'un rocher placé à droite du joueur
+        if (Grille.children[PositionX].children[PositionY+1].classList.contains('mur')===false){                //Verification d'un mur placé à droite du joueur
+            Grille.children[PositionX].children[PositionY+1].className="player";                                //Remplace la terre ou le diamant à droite par le joueur
+            Grille.children[PositionX].children[PositionY].className="vide";                                    //Remplace le joueur par du vide
+            PositionY+=1;
+            nbrDeplacement+=1;
+        }
+    }
+                        /* Permettre de pousser un rocher sur la droite */
+    else if (Grille.children[PositionX].children[PositionY+1].classList.contains('rocher')===true){             //Verification qu'un rocher ce trouvant à la droite du joueur
+        if(Grille.children[PositionX].children[PositionY+2].classList.contains('vide')===true){                 //Verification qu'à droite du rocher ce trouve du vide
+            Grille.children[PositionX].children[PositionY+2].className="rocher";                                //Remplace le vide par un rocher
+            Grille.children[PositionX].children[PositionY+1].className="player";                                //Remplace le rocher par le joueur
+            Grille.children[PositionX].children[PositionY].className="vide";                                    //Remplace le joueur par du vide
+            PositionY+=1;
+            nbrDeplacement+=1;
+        }
+    }
+
+}
+
+function gauche(){
+                            /* Déplacement du joueur sur la gauche */
+    if (Grille.children[PositionX].children[PositionY-1].classList.contains('rocher')===false){                 //Verification d'un rocher placé a la gauche du joueur            
+        if (Grille.children[PositionX].children[PositionY-1].classList.contains('mur')===false){                //Verification d'un mur placé a la gauche du joueur  
+            Grille.children[PositionX].children[PositionY-1].className="player";                                //Remplace la terre ou le diamant à gauche par le joueur
+            Grille.children[PositionX].children[PositionY].className="vide";                                    //Remplace le joueur par du vide
+            PositionY-=1;
+            nbrDeplacement+=1;
+        }
+    }
+                            /* Permettre de pousser un rocher sur la droite */
+    else if (Grille.children[PositionX].children[PositionY-1].classList.contains('rocher')===true){             //Verification d'un rocher ce trouvant à la gauche du joueur
+        if(Grille.children[PositionX].children[PositionY-2].classList.contains('vide')===true){                 //Verification du vide ce trouvant à la gauche du rocher
+            Grille.children[PositionX].children[PositionY-2].className="rocher";                                //Remplace le vide par un rocher
+            Grille.children[PositionX].children[PositionY-1].className="player";                                //Remplace le rocher par le joueur
+            Grille.children[PositionX].children[PositionY].className="vide";                                    //Remplace le joueur par du vide
+            PositionY-=1;
+            nbrDeplacement+=1;
+        }
+    }    
+}
 
 document.addEventListener("keyup", function(event){
     if (nbrDiamant!=nbrDiamantCollecte){                                                                        //Impossible de bouger si la partie est gagnée
@@ -87,94 +174,3 @@ document.addEventListener("keyup", function(event){
         }
     }
 });
-
-function playermort(){
-    if (Grille.children[PositionX-1].children[PositionY].classList.contains('rocher')===true){                  //Verification d'un rocher placé au dessus du joueur
-        if(Grille.children[PositionX+1].children[PositionY].classList.contains('rocher')===false){              //Verification d'un rocher placé en dessous du joueur
-            if(Grille.children[PositionX+1].children[PositionY].classList.contains('mur')===false){             //Verification d'un mur placé en dessous du joueur
-                Grille.children[PositionX+1].children[PositionY].className='rocher';                            //Remplace la terre ou le diamant par le rocher
-                Grille.children[PositionX-1].children[PositionY].className='vide';                              //Remplace le rocher par du vide
-                Grille.children[PositionX].children[PositionY].className='vide';                                //Remplace le personnage par du vide
-                mort=true;                                                                                      //Passe la variable mort en true
-            }
-        }
-    }
-    /*
-    if(PositionX>3){
-        if (Grille.children[PositionX-2].children[PositionY].classList.contains('rocher')===true){
-            if (Grille.children[PositionX-1].children[PositionY].classList.contains('vide')===true){
-                Grille.children[PositionX].children[PositionY].className='rocher';
-                Grille.children[PositionX-2].children[PositionY].className='vide';
-                mort=true;
-            }    
-        }
-    }
-    */
-}
-
-function haut(){
-    if (Grille.children[0].children[PositionY].classList.contains('player')===false){                           //Verification du personnage placé a la limite supérieur
-        if (Grille.children[PositionX-1].children[PositionY].classList.contains('rocher')===false){             //Verification d'un rocher placé au dessus du joueur
-            if (Grille.children[PositionX-1].children[PositionY].classList.contains('mur')===false){            //Verification d'un mur placé au dessus du joueur
-                Grille.children[PositionX-1].children[PositionY].className="player";                            //Remplace la terre ou le diamant par le joueur
-                Grille.children[PositionX].children[PositionY].className="vide";                                //Remplace le joueur par du vide
-                PositionX-=1;                                                                                   
-                nbrDeplacement+=1;
-            }
-        }
-    }
-}
-
-function bas(){
-    if (Grille.children[PositionX+1].children[PositionY].classList.contains('rocher')===false){                 //Verification d'un rocher placé en dessous du joueur 
-        if (Grille.children[PositionX+1].children[PositionY].classList.contains('mur')===false){                //Verification d'un mur placé en dessous du joueur
-            Grille.children[PositionX+1].children[PositionY].className="player";                                //Remplace la terre ou le diamant par le joueur
-            Grille.children[PositionX].children[PositionY].className="vide";                                    //Remplace le joueur par du vide
-            PositionX+=1;
-            nbrDeplacement+=1;
-        }
-    }
-    
-}
-
-function droite(){
-    if (Grille.children[PositionX].children[PositionY+1].classList.contains('rocher')===false){                 //
-        if (Grille.children[PositionX].children[PositionY+1].classList.contains('mur')===false){
-            Grille.children[PositionX].children[PositionY+1].className="player";
-            Grille.children[PositionX].children[PositionY].className="vide";
-            PositionY+=1;
-            nbrDeplacement+=1;
-        }
-    }
-    else if (Grille.children[PositionX].children[PositionY+1].classList.contains('rocher')===true){
-        if(Grille.children[PositionX].children[PositionY+2].classList.contains('vide')===true){
-            Grille.children[PositionX].children[PositionY+2].className="rocher";
-            Grille.children[PositionX].children[PositionY+1].className="player";
-            Grille.children[PositionX].children[PositionY].className="vide";
-            PositionY+=1;
-            nbrDeplacement+=1;
-        }
-    }
-
-}
-
-function gauche(){
-    if (Grille.children[PositionX].children[PositionY-1].classList.contains('rocher')===false){
-        if (Grille.children[PositionX].children[PositionY-1].classList.contains('mur')===false){
-            Grille.children[PositionX].children[PositionY-1].className="player";
-            Grille.children[PositionX].children[PositionY].className="vide";
-            PositionY-=1;
-            nbrDeplacement+=1;
-        }
-    }
-    else if (Grille.children[PositionX].children[PositionY-1].classList.contains('rocher')===true){
-        if(Grille.children[PositionX].children[PositionY-2].classList.contains('vide')===true){
-            Grille.children[PositionX].children[PositionY-2].className="rocher";
-            Grille.children[PositionX].children[PositionY-1].className="player";
-            Grille.children[PositionX].children[PositionY].className="vide";
-            PositionY-=1;
-            nbrDeplacement+=1;
-        }
-    }    
-}
-

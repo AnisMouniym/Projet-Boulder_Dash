@@ -1,27 +1,18 @@
-let PositionX=0;
-let PositionY=0;
-let mort=true;
-let fichier = "";
-let nbrDiamant=0;
-let tableauFinal = [];
-let tableauTemporaire=[];
+let PositionX=0;                                                                          //Variable PositionX initialisé à 0
+let PositionY=0;                                                                          //Variable PositionY initialisé à 0
+let mort=true;                                                                            //Variable mort initialisé à true pour éviter les déplacements dans le menu principale
+let fichier = "";                                                                         //Variable fichier initialisé vide
+let nbrDiamant=0;                                                                         //Variable nbrDiamant initialisé à 0 
+let tableauFinal = [];                                                                    //Variable tableauFinal initalisé vide
+let tableauTemporaire=[];                                                                 //Variable tableauTemporaire
+let charger=false;                                                                        //Variable PositionX initialisé à 0
 
 document.addEventListener("DOMContentLoaded", () => {
   chargerFichierTexte();
 });
 
 function chargerFichierTexte() {
-  if(a=1){
-    fichier = document.getElementById("file");
-    compteurDiamant=0;
-    tableauFinal=[];
-    nbrDiamant=0;
-    nbrDeplacement=0;
-    nbrDiamantCollecte=0;
-    mort=false;
-    chargerTableauTemporaire();
-  }
-  if(Niveau<5){
+  if(Niveau<5 && charger==false){
     fetch("../Niveau"+Niveau+".txt").then((res) => res.text()).then((text) => {
       fichier = text;
       compteurDiamant=0;
