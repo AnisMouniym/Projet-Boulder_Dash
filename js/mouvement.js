@@ -24,6 +24,12 @@ function playermort(){
                         document.getElementById('music').play();                                                // Relance la musique de fond
                     }
                 }, false);
+                document.getElementById('acceuil').addEventListener('click', function() {
+                    if (mort === true) {
+                        document.getElementById('death').pause();                                               // Arrête la musique de mort
+                        document.getElementById('music').play();                                                // Relance la musique de fond
+                    }
+                }, false);
                                                                                                       
             }
         }

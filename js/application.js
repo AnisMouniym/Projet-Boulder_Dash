@@ -40,6 +40,13 @@ document.getElementById("accueil")
           }
 }, false);
 
+document.getElementById("recommencer")
+        .addEventListener("click", function() {
+          if (confirm("Voulez-vous vraiment quitter la partie ?")) {
+            chargerFichierTexte()
+          }
+}, false);
+
 //  fonctionnalités du bouton mute
 var playing = !!('ontouchstart' in window) || !!('ontouchstart' in document.documentElement) || 
 !!window.ontouchstart || (!!window.Touch && !!window.Touch.length) || !!window.onmsgesturechange || 

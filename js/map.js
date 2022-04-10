@@ -21,6 +21,7 @@ function chargerFichierTexte() {
     nbrDiamantCollecte=0;                                                                 //De la même manière pour le nombre de diamant collecté
     mort=false;                                                                           //La variable mort est donc mis en false car le jeu sera affiché
     chargerTableauTemporaire();                                                           //Appel de la fonction chargerTableauTemporaire()
+    win();                                                                                //Appel de la fonction win() qui change la musique
   });
 }
 
@@ -106,7 +107,7 @@ function afficherTableauFinal() {
   } 
 }
 
-//changer de musique pour win (ne fonctionne pas)
+//changer de musique pour win
 function win(){
   if(Niveau===4){
     document.getElementById("music").pause();
