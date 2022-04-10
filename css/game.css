@@ -1,4 +1,11 @@
+/*
+  importe la police d'écriture des boutons
+*/
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/*
+  alignement et fonctionnalités des boutons
+*/
 
 #game> button {
   font-family: 'Press Start 2P', cursive;
@@ -11,14 +18,14 @@
   border-radius: 165px;
   width: 150px;
   margin-bottom: 10px;
-  }
+}
 
 #game > button:hover {
     color: grey;
     background-color: white;
 }
 
-#span {
+span {
   margin-left: 10px;
   margin-right: 10px;
 }

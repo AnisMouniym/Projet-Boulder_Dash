@@ -1,6 +1,7 @@
 /*
     ajustement de l'image de fond
 */
+
 body {
     display: flex;
     flex-direction: column;

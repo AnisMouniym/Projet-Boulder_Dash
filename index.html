@@ -28,28 +28,28 @@
   </div>
 
   <div id="game" hidden>
+    <img src="img/logo.png" alt="logo Boulder dash" id="logo2"/>
       <button id="accueil">accueil</button>
       <button id="recommencer" onclick=chargerFichierTexte()>recommencer</button>
     <div id="grille">
 
     </div>
     <div id="stats">
-      <p> <span id="collected"></span> / <span id="total"></span> Diamants collectés <span id="deplacement"> Deplacements </span></p>
+      <p> <span id="collected"></span> / <span id="total"></span> Diamants collectés <br> <span id="deplacement"></span> Déplacements </p>
     </div>
-
-
-
   </div>
-
-
-    
-
 
   <div id="quit" hidden>
     <span>Êtes-vous sûr de vouloir quitter la partie ?</span>
     <button id="oui">Oui</button>
     <button id="non">Non</button>
   </div>
+
+  <form id="upload" hidden>
+    <label for="myfile">charger un fichier texte:</label>
+    <input type="file" id="file" name="myfile">
+    <input type="submit" value="Submit" onclick="changerFichier()">
+  </form>
 
   <footer id="surprise">
     <a href="https://bde-mega.fr" target="_blank">surprise</a>

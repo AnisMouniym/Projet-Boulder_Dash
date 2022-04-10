@@ -25,6 +25,7 @@ function chargerFichierTexte() {
 }
 }
 
+
 function chargerTableauTemporaire() {
   for (let ligne of fichier.split(/\n/)) {
     tableauTemporaire = [];
