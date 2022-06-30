@@ -1,4 +1,4 @@
-# Projet-Web-3A
+# Projet-Boulder_Dash
 Projet Programmation Web - ESIREM
 
 Ce projet est une version simplifiée du jeu Boulder Dash réaliser en HTML, CSS et Javascript.
